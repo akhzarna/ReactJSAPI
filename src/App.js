@@ -82,83 +82,88 @@ class Car extends React.Component {
   }
 }
 
+
+var test = "NTU";
+
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {id:"1",name:"Akhzar"};
-    this.state = {textValue:''}
 
-    this.state = {
-          error: null,
-          isLoaded: false,
-          items: []
-        };
-
-  }
-
-  static getDerivedStateFromProps (props,state){
-  }
-
-  changeColor = () => {
-    alert(this.state.textValue);
-    this.setState({name:"Asif Suryani"});
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state = {id:"1",name:"Akhzar"};
+  //   this.state = {textValue:''}
+  //
+  //   this.state = {
+  //         error: null,
+  //         isLoaded: false,
+  //         items: []
+  //       };
+  //
+  // }
+  //
+  // static getDerivedStateFromProps (props,state){
+  // }
+  //
+  // changeColor = () => {
+  //   alert(this.state.textValue);
+  //   this.setState({name:"Asif Suryani"});
+  // }
 
   // myChangeHandler = (event) => {
   //   this.setState({textValue:event.target.value});
   // }
 
-  render() {
+  // render() {
+  //
+  //
+  //   // var numbers = [1,2,3,4,5,6,7,8,9,10];
+  //
+  //
+  //   var Obj1 = {id: 1, name: "Khizar",father:"Iftakhar",marks:83};
+  //   var Obj2 = {id: 2, name: "Mobeen",father:"Yasin",marks:82};
+  //   var Obj3 = {id: 3, name: "Khizar",father:"Iftakhar",marks:81};
+  //   var Obj4 = {id: 4, name: "Ali",father:"Umer",marks:80};
+  //
+  //
+  //   var student = [Obj1,Obj2,Obj3,Obj4]
+  //
+  //
+  //   return (
+  //     <div>
+  //
+  //     <li>
+  //     <ul> {student[3].marks} </ul>
+  //
+  //     <ul> {student[3].name} </ul>
+  //     </li>
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //     <h1 style={{color:"green",backgroundColor:"black"}}>Who lives in my garage? {this.state.name}</h1>
+  //     <button type = "button" onClick = {this.changeColor}>
+  //     Click to Change Color
+  //     </button>
+  //
+  //     <h1> Hello How are you </h1>
+  //
+  //     <input
+  //         type="text" onChange = {this.myChangeHandler}
+  //       />
+  //
+  //     <select value="Quran Surah" style = {{color:"red"}}>
+  //       <option value="Ford">Surah Baqrah</option>
+  //       <option value="Volvo">Aal E Imran</option>
+  //       <option value="Fiat">Inaam</option>
+  //     </select>
+  //     </div>
+  //   );
+  // }
 
-
-    var numbers = [1,2,3,4,5,6,7,8,9,10];
-
-
-    var std1 = {id: 1, name: "Khizar",father:"Iftakhar",marks:83};
-    var std2 = {id: 2, name: "Mobeen",father:"Yasin",marks:82};
-    var std3 = {id: 3, name: "Khizar",father:"Iftakhar",marks:81};
-    var std4 = {id: 4, name: "Ali",father:"Umer",marks:80};
-
-
-    var student = [std1,std2,std3,std4]
-
-
-    return (
-      <div>
-
-      <li>
-      <ul> {student[3].marks} </ul>
-
-      <ul> {student[3].name} </ul>
-      </li>
-
-
-
-
-
-
-
-
-
-      <h1 style={{color:"green",backgroundColor:"black"}}>Who lives in my garage? {this.state.name}</h1>
-      <button type = "button" onClick = {this.changeColor}>
-      Click to Change Color
-      </button>
-
-      <h1> Hello How are you </h1>
-
-      <input
-          type="text" onChange = {this.myChangeHandler}
-        />
-
-      <select value="Quran Surah" style = {{color:"red"}}>
-        <option value="Ford">Surah Baqrah</option>
-        <option value="Volvo">Aal E Imran</option>
-        <option value="Fiat">Inaam</option>
-      </select>
-      </div>
-    );
-  }
 
 
   // render() {
@@ -180,36 +185,98 @@ class App extends React.Component {
   //   }
   // }
 
-  componentDidMount() {
-      fetch("https://api.myjson.com/bins/kfa6g")
-        .then(res => res.json())
-        .then(
-          (result) => {
-            this.setState({
-              isLoaded: true,
-              items: result
-            });
-          },
-          // Note: it's important to handle errors here
-          // instead of a catch() block so that we don't swallow
-          // exceptions from actual bugs in components.
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
-          }
-        )
+  // componentDidMount() {
+  //   fetch("https://api.myjson.com/bins/kfa6g")
+  //       .then(res => res.json())
+  //       .then(
+  //         (result) => {
+  //           this.setState({
+  //             isLoaded: true,
+  //             items: result
+  //           });
+  //         },
+  //         (error) => {
+  //           this.setState({
+  //             isLoaded: true,
+  //             error
+  //           });
+  //         }
+  //       )
+  //   }
 
 
-        setTimeout(() => {
-          this.setState({name: "Irfan Syal"})
-        }, 10000)
-    }
+  // Mounting Life Cycle
 
 
 
+  // static getDerivedStateFromProps (props,state){
+  // }
 
+
+
+
+  constructor(props){
+    super(props);
+    alert("This is Constructor");
+
+    this.state = {name:"Akhzar"};
+
+
+  }
+
+  static getDerivedStateFromProps (props,state){
+    alert("This is getDerivedStateFromProps");
+    test = "Yes I am NTU Student";
+  }
+
+  render() {
+
+    var items = [
+                {id:0,data:
+                  [12,
+                    {marks:99,location:
+                      [{latitude:4.4545,longitude:4.9898}]
+                    }
+                  ]
+                  ,age:38,
+                  name:"Akhzar"
+                  },
+                ];
+
+
+
+    // var test = [
+    //             {id:0,data:[12,99],age:38,name:"Akhzar"
+    //             },
+    //             {id:0,data:[12,99],age:19,name:"Ali"
+    //             },
+    //             ];
+
+      return (
+
+        <div>
+
+        <h1> {this.state.name} </h1>
+
+        // <h1> {items[0].data[1].location[0].latitude} {items[0].data[1].location[0].longitude} </h1>
+
+        <ul>
+          {items.map(items => (
+            <li key={items.id}>
+              {items.name} {items.age}
+            </li>
+          ))}
+        </ul>
+        </div>
+      );
+  }
+
+  componentDidMount(){
+    alert("This is componentDidMount");
+    test = "Yes I am NTU Student";
+
+    this.setState({name:"Ali"});
+  }
 }
 
 export default App;
